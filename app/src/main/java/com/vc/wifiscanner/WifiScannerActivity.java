@@ -88,6 +88,7 @@ public class WifiScannerActivity extends AppCompatActivity implements View.OnCli
         if (!mPassableHotsPot.equals("YRCCONNECTION")){
             mWifiManager.disconnect();
             mWifiManager.enableNetwork(wcgID, true);
+            mWifiManager.saveConfiguration();
             mWifiManager.reconnect();
         }
         String currentBssid = mWifiManager.getConnectionInfo().getBSSID();
